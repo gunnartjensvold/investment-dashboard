@@ -1,8 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+type Props = {
+  sidebarOpen: boolean
+}
+
+const props = defineProps<Props>()
+</script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div class="w-11">
+  <div class="flex items-center justify-center h-16">
+    <div
+      class="shrink-0"
+      :class="[props.sidebarOpen ? 'w-11' : 'w-8']"
+    >
       <svg
         preserve-aspect-ratio="true"
         viewBox="0 0 67 97"
@@ -29,6 +38,10 @@
         </defs>
       </svg>
     </div>
-    <span class="text-4xl font-medium bg-gradient-to-r from-blue to-purple bg-clip-text text-transparent">Trading</span>
+    <span
+      v-if="props.sidebarOpen"
+      class="text-4xl font-medium bg-gradient-to-r from-blue to-purple bg-clip-text text-transparent"
+      >Trading</span
+    >
   </div>
 </template>
