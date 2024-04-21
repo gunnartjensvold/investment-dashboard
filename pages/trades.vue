@@ -1,8 +1,10 @@
 <script setup lang="ts">
-  const { data } = await useFetch('/api/trades')
-  console.log(data) 
+const { pending, data } = await useLazyAsyncData('trades', () => $fetch('/api/trades'))
 </script>
 
 <template>
-  <div>{{data}}</div>
+  <div class="flex flex-col">
+    <div v-if="pending">Loading...</div>
+    <div v-else>{{ data.slice(0, 10) }}</div>
+  </div>
 </template>

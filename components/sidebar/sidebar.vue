@@ -22,7 +22,7 @@ const toggleSidebar = () => (isOpen.value = !isOpen.value)
 
 <template>
   <div
-    class="py-12 flex flex-col gap-16 h-full bg-mantle rounded-r-lg select-none relative transition-width duration-300"
+    class="py-12 flex flex-col shrink-0 gap-16 h-full bg-mantle rounded-r-lg select-none relative transition-width duration-300"
     :class="[isOpen ? 'w-56' : 'w-16']"
   >
     <logo :sidebar-open="isOpen"></logo>

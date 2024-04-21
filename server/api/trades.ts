@@ -5,6 +5,5 @@ export default eventHandler(async (event) => {
 
   const { data } = await client.from('trades').select('*')
 
-  return { libraries: data }
+  return data
 })
-
