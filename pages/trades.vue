@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const tradeStore = useTradeStore()
-const trades = await tradeStore.getTrades()
+
+let trades = ref<any[] | null>(null)
+
+onMounted(async () => {
+  const tradeData = await tradeStore.getTrades()
+  trades.value = tradeData.value
+})
 </script>
 
 <template>
