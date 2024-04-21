@@ -1,5 +1,5 @@
 {
-  "name": "Investment-dashboard",
+  "name": "investment-dashboard",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,11 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test" : "vitest"
+    "test": "vitest"
   },
   "dependencies": {
     "@nuxtjs/supabase": "^1.2.1",
+    "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

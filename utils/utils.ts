@@ -13,8 +13,8 @@ type FinanceData = {
 export function buildFinanceData(responsedata: FinanceData[]) {
   console.log(responsedata)
   // TODO: Create a map using example syntax :
-  // const map = new Map() 
-  // Create a object to add to the map, example syntax : 
+  // const map = new Map()
+  // Create a object to add to the map, example syntax :
   // const example = { id: 'AlaeiTrading_1', open: 1000, close: 2000, type: "Short" }
   // map.add(example.id, example)
   // Now we have created a map and can use map.get(example.id) to get the example object out of the map.
