@@ -38,7 +38,7 @@ export function buildFinanceData(responsedata: FinanceData[]): Map<UUID, Classif
   }, {} as Record<UUID, FinanceData[]>)
 
   Object.values(groupedData).forEach((trades) => {
-    if (trades.length === 2 && trades.some((trade) => trade.Status === 'OPENED') && trades.some((trade) => trade.Status === 'CLOSED')) {
+    if (trades.some((trade) => trade.Status === 'OPENED') && trades.some((trade) => trade.Status === 'CLOSED')) {
       const openedTrade = trades.find((trade) => trade.Status === 'OPENED')
       const closedTrade = trades.find((trade) => trade.Status === 'CLOSED')
       if (openedTrade && closedTrade) {
@@ -57,7 +57,7 @@ export function buildFinanceData(responsedata: FinanceData[]): Map<UUID, Classif
 
 function classifyTrade(openedTrade: FinanceData, closedTrade: FinanceData) {
   const priceChange = closedTrade.Price - openedTrade.Price
-  const isPositiveRPL = openedTrade.RplConverted && openedTrade.RplConverted > 0
+  const isPositiveRPL = closedTrade.RplConverted && closedTrade.RplConverted > 0
   const positionType = priceChange > 0 ? 'Short' : 'Long'
   const outcome = isPositiveRPL ? 'Win' : 'Loss'
 

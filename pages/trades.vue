@@ -23,7 +23,7 @@ watchEffect(() => {
           v-for="trade in processedTrades"
           :key="trade.id"
         >
-          Trade ID: {{ trade.id }}, Open Price: {{ trade.openPrice }}, Close Price: {{ trade.closePrice }}, Type: {{ trade.type }}, Status: {{ trade.status }}, Instrument: {{ trade.instrumentSymbol }}, Opened: {{ trade.timestampOpened }}, Closed: {{ trade.timestampClosed }}
+        <TradeCard :data="trade"></TradeCard>
         </li>
       </ul>
     </div>
