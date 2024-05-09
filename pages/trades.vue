@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
 import { useLazyAsyncData } from '#imports'
-import { buildFinanceData } from '~/utils/utils' // Ensure this path is correct
+import { buildFinanceData, type ClassifiedTrade } from '~/utils/utils' // Ensure this path is correct
 
 const { pending, data } = await useLazyAsyncData('trades', () => $fetch('/api/trades'))
-const processedTrades = ref([])
+const processedTrades = ref<ClassifiedTrade[]>([])
 
 watchEffect(() => {
   if (data.value && !pending.value) {

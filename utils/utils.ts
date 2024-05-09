@@ -9,7 +9,18 @@ interface FinanceData {
   Timestamp: string
 }
 
-export function buildFinanceData(responsedata: FinanceData[]): Map<UUID, any> {
+export type ClassifiedTrade = {
+  id: UUID
+  openPrice: number
+  closePrice: number
+  type: 'Short' | 'Long'
+  status: 'Win' | 'Loss'
+  instrumentSymbol: string
+  timestampOpened: string
+  timestampClosed: string
+}
+
+export function buildFinanceData(responsedata: FinanceData[]): Map<UUID, ClassifiedTrade> {
   const tradesMap = new Map<UUID, any>()
 
   if (!responsedata || responsedata.length === 0) {
@@ -60,13 +71,4 @@ function classifyTrade(openedTrade: FinanceData, closedTrade: FinanceData) {
     timestampOpened: openedTrade.Timestamp,
     timestampClosed: closedTrade.Timestamp
   }
-}
-
-export function getDataFromYahoo(ticker: string) {
-  const capitalOneMap = {
-    'OIL_BRENT': 'BZ=F'
-  }
-  const ticker = capitalOneMap[ticker]
-  // const data = yfincane. get ... ()
-  return data
 }
