@@ -64,9 +64,12 @@ function classifyTrade(openedTrade: FinanceData, closedTrade: FinanceData) {
 
 export function getDataFromYahoo(ticker: string) {
   const capitalOneMap = {
-    'OIL_BRENT': 'BZ=F'
+    'OIL_BRENT': 'BZ=F',
+    'GOLD': 'GC=F',
+    'US100': '^NDX' 
   }
-  const ticker = capitalOneMap[ticker]
-  // const data = yfincane. get ... ()
-  return data
+  const yahooTicker = capitalOneMap[ticker as keyof  typeof capitalOneMap]
+   const data = yfincane. get ... ()
+  data
 }
+
