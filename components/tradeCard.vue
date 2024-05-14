@@ -13,7 +13,7 @@
         class="font-medium"
         :class="props.data.rpl > 0 ? 'text-green' : 'text-red'"
       >
-        {{ props.data.rpl }}
+        €{{ props.data.rpl }}
       </span>
     </div>
   </div>

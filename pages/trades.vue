@@ -18,6 +18,9 @@ watchEffect(() => {
   <div class="flex flex-col h-full overflow-y-scroll">
     <div v-if="pending">Loading...</div>
     <div v-else>
+      <div>
+        <h1 class="text-3xl font-semibold mb-6">Recent trades</h1>
+      </div>
       <ul class="flex flex-wrap gap-4">
         <li
           v-for="(trade, index) in processedTrades"
