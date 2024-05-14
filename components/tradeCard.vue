@@ -11,7 +11,7 @@
         </div>
 
 <span>
-    {{ props.data.closePrice-props.data.openPrice }}
+    {{ props.data.rpl }}
 </span>
     </div>
 </template>

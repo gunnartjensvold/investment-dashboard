@@ -18,6 +18,7 @@ export type ClassifiedTrade = {
   instrumentSymbol: string
   timestampOpened: string
   timestampClosed: string
+  rpl: number
 }
 
 export function buildFinanceData(responsedata: FinanceData[]): Map<UUID, ClassifiedTrade> {
@@ -69,7 +70,9 @@ function classifyTrade(openedTrade: FinanceData, closedTrade: FinanceData) {
     status: outcome,
     instrumentSymbol: openedTrade.InstrumentSymbol,
     timestampOpened: openedTrade.Timestamp,
-    timestampClosed: closedTrade.Timestamp
+    timestampClosed: closedTrade.Timestamp,
+    rpl: closedTrade.RplConverted
+    
   }
 }
 
