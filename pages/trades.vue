@@ -18,9 +18,11 @@ watchEffect(() => {
   <div class="flex flex-col h-full overflow-y-scroll">
     <div v-if="pending">Loading...</div>
     <div v-else>
-      <chart>
-        
-      </chart>
+      <ClientOnly>
+        <template #default>
+          <ChartsChart></ChartsChart>
+        </template>
+      </ClientOnly>
       <div>
         <h1 class="text-3xl font-semibold mb-6">Recent trades</h1>
       </div>

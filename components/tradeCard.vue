@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-mantle rounded-md border-2 cursor-pointer border-transparent w-44 hover:border-purple px-2.5 py-2">
+  <div class="flex flex-col bg-mantle rounded-md border-4 cursor-pointer border-transparent w-44 hover:border-purple px-2.5 py-2">
     <div class="flex justify-between">
       <span class="font-medium">
         {{ props.data.instrumentSymbol }}
