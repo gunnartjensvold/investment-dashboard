@@ -1,18 +1,12 @@
-
 <template>
-    <div>
-{{ props.data.status }}
-    </div>
+  <div>
+    {{ props.data.status }}
+  </div>
 </template>
 
 <script setup lang="ts">
 type Props = {
-    data: ClassifiedTrade
+  data: ClassifiedTrade
 }
 const props = defineProps<Props>()
-
 </script>
-
-<style scoped>
-
-</style>

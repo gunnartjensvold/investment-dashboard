@@ -15,7 +15,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col h-full overflow-hidden">
     <div v-if="pending">Loading...</div>
     <div v-else>
       <ul>
@@ -23,7 +23,7 @@ watchEffect(() => {
           v-for="trade in processedTrades"
           :key="trade.id"
         >
-        <TradeCard :data="trade"></TradeCard>
+          <TradeCard :data="trade"></TradeCard>
         </li>
       </ul>
     </div>
