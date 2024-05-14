@@ -15,10 +15,10 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-full overflow-hidden">
+  <div class="flex flex-col h-full overflow-y-scroll">
     <div v-if="pending">Loading...</div>
     <div v-else>
-      <ul>
+      <ul class="flex flex-wrap gap-4">
         <li
           v-for="(trade, index) in processedTrades"
           :key="trade.id"
