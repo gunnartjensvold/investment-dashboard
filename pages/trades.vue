@@ -20,10 +20,13 @@ watchEffect(() => {
     <div v-else>
       <ul>
         <li
-          v-for="trade in processedTrades"
+          v-for="(trade, index) in processedTrades"
           :key="trade.id"
         >
-          <TradeCard :data="trade"></TradeCard>
+          <TradeCard
+            :data="trade"
+            :index
+          ></TradeCard>
         </li>
       </ul>
     </div>
