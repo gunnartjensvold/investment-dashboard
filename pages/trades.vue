@@ -20,7 +20,9 @@ watchEffect(() => {
     <div v-else>
       <ClientOnly>
         <template #default>
-          <ChartsChart></ChartsChart>
+          <ChartsChart
+          :ticker="'TSLA'" :date="'2024-05-27'"
+          ></ChartsChart>
         </template>
       </ClientOnly>
       <div>

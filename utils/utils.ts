@@ -80,7 +80,8 @@ export function getDataFromYahoo(ticker: string) {
   const capitalOneMap = {
     'OIL_BRENT': 'BZ=F',
     'GOLD': 'GC=F',
-    'US100': '^NDX'
+    'US100': '^NDX',
+    'HK_50': '^HSI'
   }
   const yahooTicker = capitalOneMap[ticker as keyof typeof capitalOneMap]
   //  const data = yfincane. get ... ()
